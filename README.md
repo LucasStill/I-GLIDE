@@ -11,6 +11,14 @@ I-GLIDE is a project aimed at reproducing the C-MAPSS experiment using our archi
 - **RUL Prediction:** The extracted HIs are fed into a Random Forest (RF) to predict the Remaining Useful Life (RUL).
 - **Architecture Choices:** You can choose between different architectures, including AE, VAE, I-GLIDE AE, and I-GLIDE VAE.
 
+### Fig. 1. I-GLIDE Architecture Framework
+<img width="751" alt="ensemble_architecture4" src="https://github.com/user-attachments/assets/d80a0f72-5dfb-4523-9ded-f03c40e77e3c" />
+
+- **A:** Subsystem-specific encoder-decoder heads learn distinct latent representations, which are fused into a shared latent space $z$ via reconstruction loss (trained on healthy data).
+- **B:** Health Indicators (HIs) are extracted using RaPP metrics [González-Muñiz et al., 2022] and Uncertainty Quantification (UQ) [Kingma & Welling, 2013] over full trajectories.
+- **C:** Aggregated HIs are used to predict Remaining Useful Life (RUL), trained via a Random Forest (RF) regressor $\( \mathcal{F} \)$.
+
+
 ### Dataset
 
 The C-MAPSS dataset is used for this experiment. For each trajectory, the last point is represented with `rmse_last`.
