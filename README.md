@@ -1,5 +1,5 @@
 
-# I-GLIDE: Input Groups for Latent Health Indicators in Degradation Estimation
+# I-GLIDE: Input Groups for Latent health Indicators in Degradation Estimation
 
 ## Description
 
